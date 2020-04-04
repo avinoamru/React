@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const api_key = 'd9346072d6699bbf487242a9cdecda9b'
 
@@ -10,22 +10,43 @@ const Weather = ()=> {
     def_f: 0
   });
 
-  const handleClick = () =>{
+  useEffect(()=>{
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=vancouver&appid=${api_key}`).then(res=>(res.json()).then(data=>{
+      let temp = data.main.temp
+      const cel = c =>(
+        c = c - 273.15 
+      )
+      
+      const fahr = f => (
+         f =(f - 273.15) * 9/5 + 32
+         )
+
+console.log(temp)
+
+
       
       setweather({
         ...weather,
-        def_c: data.main.temp
+        def_c: Number(cel(temp).toFixed(2)),
+        def_f: Number(fahr(temp).toFixed(2))
       })
     }).catch(err=> console.log(err)))
+  },[])
+
+  const handleClick =()=>{
+    setweather({
+      ...weather,
+      def_c:  weather.def_c +1
+    })
   }
   
   
 return (
-  <Fragment>
-    <h1>{weather.def_c}</h1>
-    <button onClick = {handleClick}>change</button>
-  </Fragment>
+  <div className="weather">
+    <h1>{`${weather.def_c}C`}</h1>
+    <h1>{`${weather.def_f}F`}</h1>
+    <button onClick={handleClick}>change</button>
+  </div>
 )
 
 }
