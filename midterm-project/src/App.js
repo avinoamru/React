@@ -1,13 +1,13 @@
-import React  from 'react'
-import Weather from './Weather'
+import React from "react";
+import { Weather } from "./Weather";
 
-const App =()=> {
-
-  return(
+const App = () => {
+  return (
     <div className="App">
-    <Weather/>
+      <h1>Weather Cast</h1>
+      <Weather />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
