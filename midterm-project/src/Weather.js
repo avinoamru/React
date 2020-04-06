@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { WeatherContext } from "./WeatherContext";
 import { Content } from "./Content";
 
 const api_key = "d9346072d6699bbf487242a9cdecda9b";
 
-export const Weather = () => {
-  const [weather, setweather] = useState({
-    def_c: 1,
-    def_f: 0,
-    def_wind: null,
-    def_feel: null,
-  });
+export const Weather = (props) => {
+  const [weather, setWeather] = useContext(WeatherContext);
 
   useEffect(() => {
     fetch(
@@ -18,13 +14,16 @@ export const Weather = () => {
       res
         .json()
         .then((data) => {
-          let temp = data.main.temp;
+          let mainData = data.main;
           const cel = (c) => (c = c - 273.15);
           const fahr = (f) => (f = ((f - 273.15) * 9) / 5 + 32);
           console.log(data);
-          setweather({
-            def_c: Number(cel(temp).toFixed(2)),
-            def_f: Number(fahr(temp).toFixed(2)),
+          setWeather({
+            ...weather,
+            def_c: Number(cel(mainData.temp).toFixed(2)),
+            def_f: Number(fahr(mainData.temp).toFixed(2)),
+            def_feel_c: Number(cel(mainData.feels_like).toFixed(2)),
+            def_feel_f: Number(fahr(mainData.feels_like).toFixed(2)),
           });
         })
         .catch((err) => console.log(err))
@@ -33,7 +32,15 @@ export const Weather = () => {
 
   return (
     <div className="weather">
-      <Content city="vancouver" cel={weather.def_c} fahr={weather.def_f} />
+      <Content
+        city="vancouver"
+        // searchFunc={}
+        cel={weather.def_c}
+        fahr={weather.def_f}
+        feel_c={weather.def_feel_c}
+        feel_f={weather.def_feel_f}
+        wind={weather.wind}
+      />
     </div>
   );
 };

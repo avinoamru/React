@@ -4,19 +4,29 @@ export const Content = (props) => {
     city: props.city,
     cel: props.cel,
     fahr: props.fahr,
-    feel: props.feel,
+    feel_c: props.feel_c,
+    feel_f: props.feel_f,
     wind: props.wind,
   });
 
   useEffect(() => {
     setContent({
+      ...content,
       city: props.city,
       cel: props.cel,
       fahr: props.fahr,
-      feel: props.feel,
+      feel_c: props.feel_c,
+      feel_f: props.feel_f,
       wind: props.wind,
     });
-  }, []);
+  }, [
+    props.city,
+    props.cel,
+    props.fahr,
+    props.feel_c,
+    props.feel_f,
+    props.wind,
+  ]);
 
   return (
     <div className="content">
@@ -31,7 +41,8 @@ export const Content = (props) => {
               {content.fahr}
             </td>
             <td className="content-cells" id="feel-cell">
-              {content.feel}
+              <li>Feels like: {content.feel_c}</li>
+              <li>Feels like F: {content.feel_f}</li>
             </td>
             <td className="content-cells" id="wind-cell">
               {content.wind}
