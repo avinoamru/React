@@ -7,10 +7,11 @@ const App = () => {
 
   return (
     <WeatherProvider>
-      <div className="App">
-        <h1>Weather Cast</h1>
-
-        <Weather />
+    <header className = "header">
+    <h1>Weather Cast</h1> 
+    </header>  
+      <div className="App container">
+      <Weather />
       </div>
     </WeatherProvider>
   );

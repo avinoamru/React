@@ -6,7 +6,7 @@ export const Content = (props) => {
     fahr: props.fahr,
     feel_c: props.feel_c,
     feel_f: props.feel_f,
-    wind: props.wind,
+    time: props.time,
   });
 
   useEffect(() => {
@@ -29,22 +29,23 @@ export const Content = (props) => {
   ]);
 
   return (
-    <div className="content">
+    <div className="weather-content container">
       <h3 id="content-title">{content.city}</h3>
       <table>
-        <tbody>
+        <tbody className= "row">
           <tr>
-            <td className="content-cells" id="cel-cell">
-              {content.cel}
+            <td className="content-cells col-md-6 row" id="temp-cell">
+             <li className ="col-md-6">{content.cel}</li> 
+             <li className ="col-md-6">{content.fahr}</li> 
             </td>
-            <td className="content-cells" id="fahr-cell">
-              {content.fahr}
+          
+              
+            
+            <td className="content-cells col-md-6 row" id="feel-cell">
+              <li className ="col-md-6">Feels like: {content.feel_c}</li>
+              <li className ="col-md-6">Feels like F: {content.feel_f}</li>
             </td>
-            <td className="content-cells" id="feel-cell">
-              <li>Feels like: {content.feel_c}</li>
-              <li>Feels like F: {content.feel_f}</li>
-            </td>
-            <td className="content-cells" id="wind-cell">
+            <td className="content-cells col-md-3" id="wind-cell">
               {content.wind}
             </td>
           </tr>
