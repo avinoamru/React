@@ -3,13 +3,15 @@ import { WeatherContext } from "./WeatherContext";
 import { Content } from "./Content";
 
 const api_key = "d9346072d6699bbf487242a9cdecda9b";
+let cityInput = document.getElementById("city-input");
 
 export const Weather = (props) => {
   const [weather, setWeather] = useContext(WeatherContext);
 
   useEffect(() => {
+    console.log("The Weather useEffect is running here");
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=vancouver&appid=${api_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${weather.city}&appid=${api_key}`
     ).then((res) =>
       res
         .json()
@@ -28,18 +30,30 @@ export const Weather = (props) => {
         })
         .catch((err) => console.log(err))
     );
-  }, []);
+  }, [weather.city]);
+
+  const searchCity = () => {
+    // fetch(
+    //   `http://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${api_key}`
+    // )
+    //   .then(async (res) => {
+    //     const data = await res.json();
+    //     console.log(data);
+    //   })
+    //   .catch((err) => console.log(err));
+  };
 
   return (
     <div className="weather">
       <Content
-        city="vancouver"
+        city={weather.city}
         // searchFunc={}
         cel={weather.def_c}
         fahr={weather.def_f}
         feel_c={weather.def_feel_c}
         feel_f={weather.def_feel_f}
         wind={weather.wind}
+        searchFunc={searchCity}
       />
     </div>
   );
