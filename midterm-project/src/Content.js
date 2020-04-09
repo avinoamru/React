@@ -1,39 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 export const Content = (props) => {
-  const [content, setContent] = useState({
-    city: props.city,
-    cel: props.cel,
-    fahr: props.fahr,
-    feel_c: props.feel_c,
-    feel_f: props.feel_f,
-    time: props.time,
-  });
-  useEffect(() => {
-    setContent({
-      ...content,
-      city: props.city,
-      cel: props.cel,
-      fahr: props.fahr,
-      feel_c: props.feel_c,
-      feel_f: props.feel_f,
-      wind: props.wind,
-    });
-  }, [
-    props.city,
-    props.cel,
-    props.fahr,
-    props.feel_c,
-    props.feel_f,
-    props.wind,
-  ]);
   return (
     <div className="weather-content container">
-      <h3 id="content-title">{content.city}</h3>
+      <h3 id="content-title">{props.title}</h3>
       <input
         type="text"
         required
         id="city-input"
         placeholder="Enter City Here..."
+        value={props.city}
+        onChange={props.handleCityChange}
       />
       <button id="search-btn" onClick={props.searchFunc}>
         Search
@@ -42,16 +18,16 @@ export const Content = (props) => {
         <tbody className="row">
           <tr>
             <td className="content-cells col-md-6 row" id="temp-cell">
-              <li className="col-md-6">{content.cel}</li>
-              <li className="col-md-6">{content.fahr}</li>
+              <li className="col-md-6">{props.cel}</li>
+              <li className="col-md-6">{props.fahr}</li>
             </td>
 
             <td className="content-cells col-md-6 row" id="feel-cell">
-              <li className="col-md-6">Feels like: {content.feel_c}</li>
-              <li className="col-md-6">Feels like F: {content.feel_f}</li>
+              <li className="col-md-6">Feels like: {props.feel_c}</li>
+              <li className="col-md-6">Feels like F:{props.feel_f}</li>
             </td>
             <td className="content-cells col-md-3" id="wind-cell">
-              {content.wind}
+              {props.wind}
             </td>
           </tr>
         </tbody>

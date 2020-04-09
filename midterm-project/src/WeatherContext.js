@@ -10,7 +10,8 @@ export const WeatherProvider = (props) => {
     def_feel_c: null,
     def_feel_f: null,
     wind: null,
-    city: "vancouver",
+    city: "",
+    title: "Vancouver",
   });
 
   return (
