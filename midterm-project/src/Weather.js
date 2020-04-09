@@ -3,11 +3,10 @@ import { WeatherContext } from "./WeatherContext";
 import { Content } from "./Content";
 
 const api_key = "d9346072d6699bbf487242a9cdecda9b";
-let cityInput = document.getElementById("city-input");
+
 
 export const Weather = (props) => {
   const [weather, setWeather] = useContext(WeatherContext);
-
   useEffect(() => {
     console.log("The Weather useEffect is running here");
     fetch(
@@ -32,22 +31,18 @@ export const Weather = (props) => {
     );
   }, [weather.city]);
 
-  const searchCity = () => {
-    // fetch(
-    //   `http://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${api_key}`
-    // )
-    //   .then(async (res) => {
-    //     const data = await res.json();
-    //     console.log(data);
-    //   })
-    //   .catch((err) => console.log(err));
+  const searchCity = (e) => {
+    setWeather({
+      ...weather,
+      city: e.target.value
+    })
   };
 
   return (
     <div className="weather">
       <Content
         city={weather.city}
-        // searchFunc={}
+       
         cel={weather.def_c}
         fahr={weather.def_f}
         feel_c={weather.def_feel_c}
