@@ -1,3 +1,10 @@
-.header{
-    text-align: center;
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgb(9, 9, 255), lightblue);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .header {
+        text-align: center;
+    }
 }
