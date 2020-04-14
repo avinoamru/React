@@ -1,12 +1,1 @@
-body {
-  height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#0909ff), to(lightblue));
-  background-image: linear-gradient(#0909ff, lightblue);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-body .header {
-  text-align: center;
-}
-/*# sourceMappingURL=style.css.map */
+/* No CSS *//*# sourceMappingURL=style.css.map */

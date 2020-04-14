@@ -1,4 +1,5 @@
 import React from "react";
+import { Weather } from "./Weather";
 export const Content = (props) => {
   return (
     <div className="weather-content container">
@@ -14,24 +15,24 @@ export const Content = (props) => {
       <button id="search-btn" onClick={props.searchFunc}>
         Search
       </button>
-      <table>
-        <tbody className="row">
-          <tr>
-            <td className="content-cells col-md-6 row" id="temp-cell">
-              <li className="col-md-6">{props.cel}</li>
-              <li className="col-md-6">{props.fahr}</li>
-            </td>
+  <button id="temp-format" onClick={props.tempFormat}>{props.formatType}</button>
+        <div className="row">
+          
+            <div className="content-cells col-md-10 row" id="temp-cell">
+              <ul>
+              <li id="cel" className="col-md-12">Temp: {props.cel} C</li>
+              <li id="farh" className="col-md-12">Temp: {props.fahr} F</li>
+              </ul>
+            </div>
 
-            <td className="content-cells col-md-6 row" id="feel-cell">
-              <li className="col-md-6">Feels like: {props.feel_c}</li>
-              <li className="col-md-6">Feels like F:{props.feel_f}</li>
-            </td>
-            <td className="content-cells col-md-3" id="wind-cell">
-              {props.wind}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+            <div className="content-cells col-md-10 row" id="feel-cell">
+              <ul>
+              <li id="feel-cel" className="col-md-12">Feels like: {props.feel_c} C</li>
+              <li id="feel-farh" className="col-md-12">Feels like: {props.feel_f} F</li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
   );
 };
