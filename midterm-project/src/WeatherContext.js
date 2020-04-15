@@ -10,10 +10,10 @@ export const WeatherProvider = (props) => {
     def_feel_c: null,
     def_feel_f: null,
     city: "",
-    title: "Vancouver",
-    formatType:'F',
-    sunrise:null,
-    sunset:null,
+    title: "Vancouver CA",
+    formatType: "F",
+    sunrise: null,
+    sunset: null,
   });
 
   return (

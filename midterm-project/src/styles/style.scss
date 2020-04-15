@@ -1,85 +1,138 @@
-body{
+[class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 
+html {
     height: 100%;
-    width: 100%;
-    background-color: rgb(215, 230, 235);
-    display: inline-block;
-    box-sizing: border-box;
-.header{
-    margin-left: 10%;
-    h1{
-        font-size: 30px;
-        font-weight: bold;
-    }
+    overflow: hidden;
 }
 
-.weather-content{
-
-width: 100%;
-margin-top: 5%;
-margin-left: auto;
-margin-right: auto;
-
-#content-title{
-text-align: center;
-font-size: 24px;
-}
-
-#city-input{
-
-width: 250px;
-font-size: 18px;
-margin-left: 30%;
-margin-right: 2%;
-}
-#search-btn{
-    font-size: 18px;
-    border: none;
-    background-color: white;
-    box-shadow: 2px 2px 2px grey,1px 1px 5px black;
-    transition: 0.6s;
-}
-#search-btn:hover{
-    background-color: rgb(92, 92, 92);
-    color: white;
-    border: solid rgb(92, 92, 92) 5px;
-}
-
-.temp-container{
-    width: 50%;
-}
-.time.container{
-    width: 50%;
-}
-
-#temp-format{
-    position: absolute;
-    right:5%;
-    top: 100px;
-    font-size: 18px;
-    border: none;
-    background-color: white;
-    box-shadow: 2px 2px 2px grey,1px 1px 5px black;
-    transition: 0.6s;
-}
-#temp-format:hover{
-    background-color: rgb(92, 92, 92);
-    color: white;
-    border: solid rgb(92, 92, 92) 5px;
+body {
+    height: 100% !important;
+    background: linear-gradient(#b5e1ffa9, #7fccffa9, rgb(26, 83, 149));
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
-.temp-container{
-position: relative;
-left: 30%;
+
+.row {
+    height: 550px;
 
 }
-.time-container{
+
+.content-wrapper {
+    margin-top: 10%;
+    box-shadow: 0px 0px 1px rgb(176, 217, 255);
+
+}
+
+#temp-side {
+    background: linear-gradient(rgb(26, 83, 149), #7fccffa9, #b0dfffa9);
+
+
+}
+
+.temp-info {
     position: relative;
-    left: 10%;
+    top: 300px;
+    left: 145px;
+    color: rgb(245, 245, 245);
+    font-size: 20px;
+    text-shadow: 0.5px 0.5px 1px rgb(126, 126, 126);
 }
+
+#temp-city {
+    position: relative;
+    bottom: 200px;
+    left: 25px;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+}
+
+.temp-item {
+
+    margin-right: 10px;
+    font-size: 30px !important;
+}
+
+#info-side {
+    background: linear-gradient(rgba(0, 0, 0, 0.616), rgba(80, 80, 80, 0.383));
+    font-size: 20px;
+    color: rgb(226, 226, 226);
+    letter-spacing: 1.2px;
+
 }
 
 
+#additional-info {
+    position: relative;
+    top: 50%;
+}
 
+#city-input {
+    margin-left: 30px;
+    margin-top: 30px;
+    border: none;
+    font-size: 18px;
+    color: rgb(238, 238, 238);
+
+    background-color: transparent;
+}
+
+#city-input::placeholder {
+    color: rgb(224, 224, 224);
+}
+
+hr {
+    width: 90% !important;
+}
+
+#search-btn {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.349);
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+#search-btn:hover {
+    background-color: rgba(128, 128, 128, 0.657);
+    padding-right: 20px;
+    padding-left: 20px;
+
+}
+
+#temp-format {
+    position: absolute;
+    bottom: 298px;
+    left: -145px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    color: white;
+    background-color: rgba(47, 47, 47, 0.726);
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.temp {
+    position: relative;
+    right: 100px;
+}
+
+#temp-format:hover {
+    background-color: rgba(0, 0, 0, 0.657);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+ul {
+    list-style: none;
 }
