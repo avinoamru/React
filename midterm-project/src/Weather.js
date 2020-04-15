@@ -31,18 +31,41 @@ export const Weather = () => {
         .json()
         .then((data) => {
 
-          let mainData = data.main;
           const cel = (c) => (c = c - 273.15);
           const fahr = (f) => (f = ((f - 273.15) * 9) / 5 + 32);
           console.log(data);
+          let sunrise = data.sys.sunrise,
+          sunset = data.sys.sunset,
+          timezone = data.timezone,
+          temp = data.main.temp,
+          mainData = data.main;
+
+
+
+           sunrise = sunrise * 1000 + (timezone * 1000);
+          sunset = sunset * 1000 + (timezone * 1000);
+
+          let sunriseDT = new Date(sunrise);
+          let sunsetDT = new Date(sunset)
+
+          // Sunrise time
+          let srhr = sunriseDT.getUTCHours(),
+          srmn = sunriseDT.getUTCMinutes();
+
+          // Sunset time
+          let snhr = sunsetDT.getUTCHours(), 
+          snmn = sunsetDT.getUTCMinutes();
           setWeather({
             ...weather,
             city: "",
-            def_c: Number(cel(mainData.temp).toFixed(2)),
-            def_f: Number(fahr(mainData.temp).toFixed(2)),
+            def_c: Number(cel(temp).toFixed(2)),
+            def_f: Number(fahr(temp).toFixed(2)),
             def_feel_c: Number(cel(mainData.feels_like).toFixed(2)),
             def_feel_f: Number(fahr(mainData.feels_like).toFixed(2)),
-          });
+            sunrise:srhr+":"+srmn,
+            sunset:snhr+":"+snmn,
+
+          },[]);
         })
         .catch((err) => console.log(err))
     );
@@ -65,19 +88,40 @@ export const Weather = () => {
       }
 
       return res.json().then((data) => {
-        let mainData = data.main;
         const cel = (c) => (c = c - 273.15);
         const fahr = (f) => (f = ((f - 273.15) * 9) / 5 + 32);
-console.log(data)
+          console.log(data)
+          let sunrise = data.sys.sunrise,
+          sunset = data.sys.sunset,
+          timezone = data.timezone,
+          temp = data.main.temp,
+          mainData = data.main;
+
+          
+          sunrise = sunrise * 1000 + (timezone * 1000);
+          sunset = sunset * 1000 + (timezone * 1000);
+
+         let sunriseDT = new Date(sunrise);
+         let sunsetDT = new Date(sunset)
+
+          // Sunrise time
+          let srhr = sunriseDT.getUTCHours(),
+          srmn = sunriseDT.getUTCMinutes();
+
+          // Sunset time
+          let snhr = sunsetDT.getUTCHours(), 
+          snmn = sunsetDT.getUTCMinutes();
         setWeather({
           ...weather,
           title: `${capitalize(weather.city)} ${data.sys.country}`,
           city: "",
-          def_c: Number(cel(mainData.temp).toFixed(2)),
-          def_f: Number(fahr(mainData.temp).toFixed(2)),
+          def_c: Number(cel(temp).toFixed(2)),
+          def_f: Number(fahr(temp).toFixed(2)),
           def_feel_c: Number(cel(mainData.feels_like).toFixed(2)),
           def_feel_f: Number(fahr(mainData.feels_like).toFixed(2)),
-        });
+          sunrise:srhr+":"+srmn,
+          sunset:snhr+":"+snmn,
+        },[]);
       } ).catch(err => console.log(err))
   })}  
 
@@ -93,8 +137,8 @@ console.log(data)
         })
         document.getElementById("cel").style.display = "none"
         document.getElementById("feel-cel").style.display = "none"
-        document.getElementById("farh").style.display = "flex"
-        document.getElementById("feel-farh").style.display = "flex"
+        document.getElementById("farh").style.display = "block"
+        document.getElementById("feel-farh").style.display = "block"
         
       }
       else if(formatType === "C"){
@@ -105,8 +149,8 @@ console.log(data)
         })
         document.getElementById("farh").style.display = "none"
         document.getElementById("feel-farh").style.display = "none"
-        document.getElementById("cel").style.display = "flex"
-        document.getElementById("feel-cel").style.display = "flex"
+        document.getElementById("cel").style.display = "block"
+        document.getElementById("feel-cel").style.display = "block"
 
       }
   }
@@ -126,6 +170,8 @@ console.log(data)
         formatType={weather.formatType}
         tempFormat={tempFormat}
         handleCityChange={handleCityChange}
+        sunrise={weather.sunrise}
+        sunset = {weather.sunset}
       />
     </div>
   );

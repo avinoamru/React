@@ -1,10 +1,10 @@
 import React from "react";
-import { Weather } from "./Weather";
 export const Content = (props) => {
   return (
-    <div className="weather-content container">
-      <h3 id="content-title">{props.title}</h3>
-      <input
+    <div className="weather-content container ">
+                <button id="temp-format" onClick={props.tempFormat}>{props.formatType}</button>
+
+            <input
         type="text"
         required
         id="city-input"
@@ -15,24 +15,26 @@ export const Content = (props) => {
       <button id="search-btn" onClick={props.searchFunc}>
         Search
       </button>
-  <button id="temp-format" onClick={props.tempFormat}>{props.formatType}</button>
-        <div className="row">
-          
-            <div className="content-cells col-md-10 row" id="temp-cell">
-              <ul>
-              <li id="cel" className="col-md-12">Temp: {props.cel} C</li>
-              <li id="farh" className="col-md-12">Temp: {props.fahr} F</li>
-              </ul>
-            </div>
 
-            <div className="content-cells col-md-10 row" id="feel-cell">
-              <ul>
-              <li id="feel-cel" className="col-md-12">Feels like: {props.feel_c} C</li>
-              <li id="feel-farh" className="col-md-12">Feels like: {props.feel_f} F</li>
-              </ul>
-            </div>
+      <h3 id="content-title">{props.title}</h3>
+       
+          <div className="row">
+            <div className="temp-container">
+
+              <h6 id="cel" className="info-content col-md-6">Temp: {props.cel} C</h6>
+              <h6 id="farh" className="info-content col-md-6">Temp: {props.fahr} F</h6>
+              <h6 id="feel-cel" className="info-content col-md-6">Feels like: {props.feel_c} C</h6>
+              <h6 id="feel-farh" className="info-content col-md-6">Feels like: {props.feel_f} F</h6>
+              </div>
+              <div className = "time-container">
+              <h6 id="sunrise">Sunrise: {props.sunrise}</h6>
+              <h6 id="sunset">Sunset: {props.sunset}</h6>
+           
             
-          </div>
+              
+               </div>
+               </div>
         </div>
+
   );
 };

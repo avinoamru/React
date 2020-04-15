@@ -6,11 +6,11 @@ const App = () => {
   return (
     <WeatherProvider>
       <header className="header">
-        <h1>Weather Cast</h1>
+       <img src="./cloudy.svg" alt="logo" width="50" height="50" /> <h1>Weather Cast</h1>
       </header>
-      <div className="App container">
+      
         <Weather />
-      </div>
+      
     </WeatherProvider>
   );
 };

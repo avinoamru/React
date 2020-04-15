@@ -11,7 +11,9 @@ export const WeatherProvider = (props) => {
     def_feel_f: null,
     city: "",
     title: "Vancouver",
-    formatType:'F'
+    formatType:'F',
+    sunrise:null,
+    sunset:null,
   });
 
   return (
