@@ -6,12 +6,6 @@ I made a weather app using react and bootsstrap
 
 The default city is Vancouver, BC and you have a search engine to choose and find the city you want.
 
-You will also be able to convert your currency with the local currency of the city you searched for.
-
-
-
-
-
 
 
 
