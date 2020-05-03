@@ -1,6 +1,17 @@
-nav {
-  margin-left: 10px;
-  margin-right: 10px;
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: ’Lato’, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,15 +22,15 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   min-height: 10vh;
-  background: #47646e;
+  background: #2e4c6b;
   color: white;
 }
 
-nav h3 {
+.navbar #logo {
   margin-left: 8%;
 }
 
-nav ul {
+.navbar #links-list {
   list-style-type: none;
   width: 30%;
   display: -webkit-box;
@@ -30,5 +41,49 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.navbar .nav-links {
+  color: white;
+  text-decoration: none;
+  text-decoration: none !important;
+}
+
+.tutorial-page {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px (90%)[auto-fit];
+      grid-template-columns: 200px repeat(auto-fit, 90%);
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  row-gap: 15px;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.tutorial-page .table-of-content-container {
+  border: 3px solid #dadada;
+  margin: 10px;
+}
+
+.tutorial-page .table-of-content-container .toc-links {
+  list-style-type: none !important;
+  width: 100px;
+  padding: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer #copyright {
+  font-weight: 400;
+  font-size: 18px;
 }
 /*# sourceMappingURL=App.css.map */
