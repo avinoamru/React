@@ -1,138 +1,128 @@
 [class*="col-"] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 html {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-    height: 100% !important;
-    background: linear-gradient(#b5e1ffa9, #7fccffa9, rgb(26, 83, 149));
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 100% !important;
+  background: linear-gradient(#b5e1ffa9, rgb(26, 83, 149));
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-
 .row {
-    height: 550px;
-
+  height: 550px;
 }
 
 .content-wrapper {
-    margin-top: 10%;
-    box-shadow: 0px 0px 1px rgb(176, 217, 255);
-
+  margin-top: 10%;
+  box-shadow: 0px 0px 1px rgb(176, 217, 255);
 }
 
 #temp-side {
-    background: linear-gradient(rgb(26, 83, 149), #7fccffa9, #b0dfffa9);
-
-
+  background: linear-gradient(rgb(26, 83, 149), #b0dfffa9);
 }
 
 .temp-info {
-    position: relative;
-    top: 300px;
-    left: 145px;
-    color: rgb(245, 245, 245);
-    font-size: 20px;
-    text-shadow: 0.5px 0.5px 1px rgb(126, 126, 126);
+  position: relative;
+  top: 300px;
+  left: 145px;
+  color: rgb(245, 245, 245);
+  font-size: 20px;
+  text-shadow: 0.5px 0.5px 1px rgb(126, 126, 126);
 }
 
 #temp-city {
-    position: relative;
-    bottom: 200px;
-    left: 25px;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 1.4px;
+  position: relative;
+  bottom: 200px;
+  left: 25px;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
 }
 
 .temp-item {
-
-    margin-right: 10px;
-    font-size: 30px !important;
+  margin-right: 10px;
+  font-size: 30px !important;
 }
 
 #info-side {
-    background: linear-gradient(rgba(0, 0, 0, 0.616), rgba(80, 80, 80, 0.383));
-    font-size: 20px;
-    color: rgb(226, 226, 226);
-    letter-spacing: 1.2px;
-
+  background: linear-gradient(rgba(0, 0, 0, 0.616), rgba(80, 80, 80, 0.383));
+  font-size: 20px;
+  color: rgb(226, 226, 226);
+  letter-spacing: 1.2px;
 }
 
-
 #additional-info {
-    position: relative;
-    top: 50%;
+  position: relative;
+  top: 50%;
 }
 
 #city-input {
-    margin-left: 30px;
-    margin-top: 30px;
-    border: none;
-    font-size: 18px;
-    color: rgb(238, 238, 238);
+  margin-left: 30px;
+  margin-top: 30px;
+  border: none;
+  font-size: 18px;
+  color: rgb(238, 238, 238);
 
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #city-input::placeholder {
-    color: rgb(224, 224, 224);
+  color: rgb(224, 224, 224);
 }
 
 hr {
-    width: 90% !important;
+  width: 90% !important;
 }
 
 #search-btn {
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border: none;
-    color: white;
-    background-color: rgba(128, 128, 128, 0.349);
-    font-size: 24px;
-    transition: 0.5s;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.349);
+  font-size: 24px;
+  transition: 0.5s;
 }
 
 #search-btn:hover {
-    background-color: rgba(128, 128, 128, 0.657);
-    padding-right: 20px;
-    padding-left: 20px;
-
+  background-color: rgba(128, 128, 128, 0.657);
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 #temp-format {
-    position: absolute;
-    bottom: 298px;
-    left: -145px;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border: none;
-    color: white;
-    background-color: rgba(47, 47, 47, 0.726);
-    font-size: 24px;
-    transition: 0.5s;
+  position: absolute;
+  bottom: 298px;
+  left: -145px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  color: white;
+  background-color: rgba(47, 47, 47, 0.726);
+  font-size: 24px;
+  transition: 0.5s;
 }
 
 .temp {
-    position: relative;
-    right: 100px;
+  position: relative;
+  right: 100px;
 }
 
 #temp-format:hover {
-    background-color: rgba(0, 0, 0, 0.657);
-    padding-right: 20px;
-    padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.657);
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }

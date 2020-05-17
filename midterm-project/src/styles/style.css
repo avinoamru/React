@@ -10,8 +10,8 @@ html {
 
 body {
   height: 100% !important;
-  background: -webkit-gradient(linear, left top, left bottom, from(#b5e1ffa9), color-stop(#7fccffa9), to(#1a5395));
-  background: linear-gradient(#b5e1ffa9, #7fccffa9, #1a5395);
+  background: -webkit-gradient(linear, left top, left bottom, from(#b5e1ffa9), to(#1a5395));
+  background: linear-gradient(#b5e1ffa9, #1a5395);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,8 +27,8 @@ body {
 }
 
 #temp-side {
-  background: -webkit-gradient(linear, left top, left bottom, from(#1a5395), color-stop(#7fccffa9), to(#b0dfffa9));
-  background: linear-gradient(#1a5395, #7fccffa9, #b0dfffa9);
+  background: -webkit-gradient(linear, left top, left bottom, from(#1a5395), to(#b0dfffa9));
+  background: linear-gradient(#1a5395, #b0dfffa9);
 }
 
 .temp-info {

@@ -60,28 +60,64 @@ body {
 // end of navbar
 
 
-
-
 .tutorial-page {
   display: grid;
-  grid-template-columns: 200px repeat(auto-fit, 90%);
+  grid-template-columns: 400px repeat(auto-fit, 80%);
   column-gap: 15px;
   row-gap: 15px;
   grid-template-rows: 1fr;
 
   .table-of-content-container {
 
-    border: 3px solid $toc_container_border;
-    margin: 10px;
+    border: 2px solid $toc_container_border;
+    margin-top: 20%;
 
-
-    .toc-links {
+    .toc-Links {
       list-style-type: none !important;
-
-      width: 100px;
+      width: 50%;
+      margin-left: 110px;
       padding: 7px;
 
-      border-bottom: 1px solid $toc_container_border_bottom;
+      .topic-button {
+        cursor: pointer;
+        background-color: white;
+        color: rgb(39, 67, 77);
+        font-size: 20px;
+        border: none;
+        transition: 0.4s;
+      }
+
+      .topic-button:focus {
+        outline: 0;
+        color: rgb(1, 128, 167);
+      }
+
+      // .topic-button:active {}
+
+      .topic-button:hover {
+        padding-left: 10px;
+        font-size: 24px;
+      }
+    }
+
+  }
+
+
+  .main-content-container {
+    margin-left: 100px;
+
+    .content {
+      margin-top: 10%;
+      width: 80%;
+
+      code {
+
+        padding-right: 7px;
+        padding-left: 7px;
+
+        color: white !important;
+        background-color: black !important;
+      }
     }
 
   }
@@ -92,14 +128,24 @@ body {
 
 
 .footer {
-  display: flex;
-  justify-content: center;
+  height: 70px;
+  background-color: $navbar_footer_bgcolor;
+  position: fixed;
+  width: 100%;
+  text-align: left;
+
+  bottom: 0;
 
 
 
   #copyright {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    padding-left: 100px;
+    padding-top: 10px;
   }
 }
 

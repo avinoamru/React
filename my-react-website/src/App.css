@@ -52,8 +52,8 @@ body {
 .tutorial-page {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 200px (90%)[auto-fit];
-      grid-template-columns: 200px repeat(auto-fit, 90%);
+  -ms-grid-columns: 400px (80%)[auto-fit];
+      grid-template-columns: 400px repeat(auto-fit, 80%);
   -webkit-column-gap: 15px;
           column-gap: 15px;
   row-gap: 15px;
@@ -62,28 +62,69 @@ body {
 }
 
 .tutorial-page .table-of-content-container {
-  border: 3px solid #dadada;
-  margin: 10px;
+  border: 2px solid #dadada;
+  margin-top: 20%;
 }
 
-.tutorial-page .table-of-content-container .toc-links {
+.tutorial-page .table-of-content-container .toc-Links {
   list-style-type: none !important;
-  width: 100px;
+  width: 50%;
+  margin-left: 110px;
   padding: 7px;
-  border-bottom: 1px solid #f1f1f1;
+}
+
+.tutorial-page .table-of-content-container .toc-Links .topic-button {
+  cursor: pointer;
+  background-color: white;
+  color: #27434d;
+  font-size: 20px;
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.tutorial-page .table-of-content-container .toc-Links .topic-button:focus {
+  outline: 0;
+  color: #0180a7;
+}
+
+.tutorial-page .table-of-content-container .toc-Links .topic-button:hover {
+  padding-left: 10px;
+  font-size: 24px;
+}
+
+.tutorial-page .main-content-container {
+  margin-left: 100px;
+}
+
+.tutorial-page .main-content-container .content {
+  margin-top: 10%;
+  width: 80%;
+}
+
+.tutorial-page .main-content-container .content code {
+  padding-right: 7px;
+  padding-left: 7px;
+  color: white !important;
+  background-color: black !important;
 }
 
 .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  height: 70px;
+  background-color: #2e4c6b;
+  position: fixed;
+  width: 100%;
+  text-align: left;
+  bottom: 0;
 }
 
 .footer #copyright {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: white;
+  padding-left: 100px;
+  padding-top: 10px;
 }
 /*# sourceMappingURL=App.css.map */

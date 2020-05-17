@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import GettingStarted from "./topics/GettingStarted";
 import DataTypes from "./topics/DataTypes";
+import { Context } from "../Context";
 const Content = (props) => {
-  const [currentTopic, setCurrentTopic] = useState(props.topic);
-
+  const { getCurrentTopicsContext } = useContext(Context);
+  const [currentTopic, setCurrentTopic] = getCurrentTopicsContext;
+  console.log(currentTopic);
+  const [topicContent, setTopicContent] = useState(GettingStarted);
   useEffect(() => {
     console.log(`Content Loaded`);
-    //   switch () {
-    //     case "gs":
-    //       setCurrentTopic(GettingStarted);
-    //       break;
-    //     case "dt":
-    //       setCurrentTopic(DataTypes);
-    //       break;
-    //     default:
-    //       alert("Wrong input");
-    //   }
-  }, []);
+
+    switch (currentTopic) {
+      case "Getting Started":
+        setTopicContent(GettingStarted);
+        break;
+      case "Data Types":
+        setTopicContent(DataTypes);
+        break;
+      default:
+        console.log("default invoked");
+    }
+  }, [currentTopic]);
   return (
     <main className="main-content-container">
-      <p>{currentTopic}</p>
+      <div className="content">{topicContent}</div>
     </main>
   );
 };
