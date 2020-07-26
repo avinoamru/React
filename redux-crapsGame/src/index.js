@@ -4,9 +4,9 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { crapsReducer } from "./reducers/gamesReducer";
+import { crapReducer } from "./reducers/gamesReducer";
 
-const crapStore = createStore(crapsReducer);
+const crapStore = createStore(crapReducer);
 
 ReactDOM.render(
   <React.StrictMode>
